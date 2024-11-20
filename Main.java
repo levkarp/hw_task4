@@ -44,13 +44,24 @@ public class Main {
         Book book1=new Book("пикник на обочине","братья Стругацкие",245,550.5,true);
         Book book2=new Book("вино из одуванчиков","брэдбери",24,150.5,false);
         System.out.println(book1);//проверка тустринг
-        book1.printInfo();//инфо о книге
-        System.out.println();
+       // book1.printInfo();//инфо о книге
         Author author1=new Author("Рэй", "брэдбери",book2);
 
         System.out.println(author1);
-        Book book3=new Book(author1,"1984",245.9);
+        Book book3=new Book("1984",245.9);
         Author author3=new Author("джордж", "оруэл",book3);
         System.out.println(book3);
+        User user1=new User("Иван","Иванов","iv@ya.ru");
+        System.out.println(user1);
+        User user2=new User("Петр","Петров","petr@ya.ru");
+        System.out.println(user2);
+        //equals сравнивает содержимое ссылок book1 и book2 разные объекты , но содержимое одинаково- true
+        System.out.println(book1.compareBooks("золотая рыбка","Пушкин").equals
+                (book2.compareBooks("золотая рыбка","Пушкин")));
+       //== не сравнивает содержимое ссылок false
+        System.out.println(book1.compareBooks("золотая рыбка","Пушкин")==book2.
+                compareBooks("золотая рыбка","Пушкин"));
     }
-}
+
+    }
+
