@@ -41,27 +41,39 @@
 
 public class Main {
     public static void main(String[] args) {
-        Book book1=new Book("пикник на обочине","братья Стругацкие",245,550.5,true);
-        Book book2=new Book("вино из одуванчиков","брэдбери",24,150.5,false);
+
+
+        Author author1 = new Author("Рэй", "брэдбери");
+        Author author2 = new Author("Рэ", "брэд");
+        Book book1 = new Book("пикник на обочине", 245, 550.5, true, author2);
+        Book book2 = new Book("вино из одуванчиков", 24, 150.5, false, author1);
         System.out.println(book1);//проверка тустринг
-       // book1.printInfo();//инфо о книге
-        Author author1=new Author("Рэй", "брэдбери",book2);
+        // book1.printInfo();//инфо о книге
 
+        Book book3 = new Book("1984", 245.9);
         System.out.println(author1);
-        Book book3=new Book("1984",245.9);
-        Author author3=new Author("джордж", "оруэл",book3);
+
+
+        Author author3 = new Author("джордж", "оруэл");
         System.out.println(book3);
-        User user1=new User("Иван","Иванов","iv@ya.ru");
+        User user1 = new User("Иван", "Иванов", "iv@ya.ru");
         System.out.println(user1);
-        User user2=new User("Петр","Петров","petr@ya.ru");
+        User user2 = new User("Петр", "Петров", "petr@ya.ru");
         System.out.println(user2);
-        //equals сравнивает содержимое ссылок book1 и book2 разные объекты , но содержимое одинаково- true
-        System.out.println(book1.compareBooks("золотая рыбка","Пушкин").equals
-                (book2.compareBooks("золотая рыбка","Пушкин")));
-       //== не сравнивает содержимое ссылок false
-        System.out.println(book1.compareBooks("золотая рыбка","Пушкин")==book2.
-                compareBooks("золотая рыбка","Пушкин"));
+//        //equals сравнивает содержимое ссылок book1 и book2 разные объекты , но содержимое одинаково- true
+//        System.out.println(book1.compareBooks("золотая рыбка","Пушкин").equals
+//                (book2.compareBooks("золотая рыбка","Пушкин")));
+//       //== не сравнивает содержимое ссылок false
+//        System.out.println(book1.compareBooks("золотая рыбка","Пушкин")==book2.
+//                compareBooks("золотая рыбка","Пушкин"));
+        book3.compareBooks(book2);
+        Book book4 = new Book("name", 3, 3.4, true, null);
+        System.out.println(book4);
+        book1.compareBooks(new Book("name", 3, 3.4, true, null));
+        Book book5 = new Book("Солярис", 57);
+        book5.readBook();
+        book5.checkPage();
     }
 
-    }
+}
 
